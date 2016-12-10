@@ -153,6 +153,10 @@ try:
 	os.unlink(poemid[0] + '.aux')
 	os.system('gdrive upload ' + poemid[0] + '.pdf')
 	print 'finished with latex'
+	#########################################
+	#print pdf to printer
+	#########################################
+	os.system('lp ' + poemid[0] + '.pdf')
 
 	#########################################
 	#send an email with the pdf
@@ -162,8 +166,7 @@ try:
 		sys.exit()
 	import time
 	#give time for the file to sync to drive
-	os.system('lp ' + poemid[0] + '.pdf')
-	time.sleep(5)
+	time.sleep(7)
 	#web app to retrieve a file from drive and send it
 	Emailer = 'https://script.google.com/macros/s/AKfycbyA2pZQla_EatWqL8COtecXQJEEu2QD8oiZs1v1ecEdt_ihN9g/exec?'
 	parameters = {'fileName':pdfname, 'title':title, 'toAddress':toAddress}

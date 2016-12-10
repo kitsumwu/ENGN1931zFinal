@@ -162,7 +162,8 @@ try:
 		sys.exit()
 	import time
 	#give time for the file to sync to drive
-	time.sleep(7)
+	os.system('lp ' + poemid[0] + '.pdf')
+	time.sleep(5)
 	#web app to retrieve a file from drive and send it
 	Emailer = 'https://script.google.com/macros/s/AKfycbyA2pZQla_EatWqL8COtecXQJEEu2QD8oiZs1v1ecEdt_ihN9g/exec?'
 	parameters = {'fileName':pdfname, 'title':title, 'toAddress':toAddress}

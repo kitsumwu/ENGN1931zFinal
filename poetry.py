@@ -151,7 +151,7 @@ try:
 	os.unlink( poemid[0] + '.tex')
 	os.unlink( poemid[0] + '.log')
 	os.unlink(poemid[0] + '.aux')
-	os.system('gdrive upload ' poemid[0] + '.pdf')
+	os.system('gdrive upload ' + poemid[0] + '.pdf')
 	print 'finished with latex'
 
 	#########################################
